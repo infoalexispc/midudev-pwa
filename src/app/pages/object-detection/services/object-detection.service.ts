@@ -15,6 +15,7 @@ export class ObjectDetectionService {
         this.isPredicting.set(true);
         const loadedModel = await mobilenet.load({ version: 2, alpha: 1.0 });
         this._model.set(loadedModel);
+        this.isPredicting.set(false);
        } catch (error) {
         console.error('Error loading model:', error);
        }
